@@ -19,9 +19,10 @@
                         <thead>
 	                        <tr>
 	                        	<th width="10%">No</th>
-	                            <th width="30%">Nama Tamu</th>
-	                            <th width="30%">Keperluan</th>
-	                            <th width="20%">Action</th>
+	                            <th width="25%">Nama Tamu</th>
+	                            <th width="25%">Keperluan</th>
+	                            <th width="20%">Nomor HP</th>
+	                            <th width="17%">Action</th>
 	                        </tr>
                         </thead>
                         @php $no = 1; @endphp
@@ -31,6 +32,7 @@
 		                        	<td>{{$no++}}</td>
 		                            <td>{{$data->nama}}</td>
 		                            <td>{{$data->keperluan}}</td>
+		                            <td>{{$data->no_hp}}</td>
 		                            <td>
 		                            	<a class="btn btn-primary fa fa-pencil" href="{{url('tamu/update/'.$data->id)}}"> Edit</a>
 		                            	<a class="btn btn-danger fa fa-trash-o" href="{{url('tamu/delete/'.$data->id)}}"> Hapus</a>

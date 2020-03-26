@@ -17,6 +17,7 @@ class CreateTamuTable extends Migration
             $table->increments('id');
             $table->string('nama')->nullable();
             $table->string('keperluan')->nullable();
+            $table->string('no_hp')->nullable();
             $table->timestamps();
         });
     }

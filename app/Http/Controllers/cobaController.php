@@ -28,7 +28,8 @@ class cobaController extends Controller
     public function create(Request $request){
     	Tamu::create([
     		'nama' 		=> $request->nama,
-    		'keperluan' => $request->keperluan
+    		'keperluan' => $request->keperluan,
+    		'no_hp' 	=> $request->no_hp
     	]);
 
     	return redirect('tamu/view');
@@ -45,7 +46,8 @@ class cobaController extends Controller
     public function update(Request $request,$id){
     	Tamu::find($id)->update([
     		'nama' 		=> $request->nama,
-    		'keperluan' => $request->keperluan
+    		'keperluan' => $request->keperluan,
+    		'no_hp' 	=> $request->no_hp
     	]);
 
     	return redirect('tamu/view');
