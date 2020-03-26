@@ -25,3 +25,6 @@ Route::post('tamu/simpan_create', 'cobaController@create');
 Route::get('tamu/update/{id}', 'cobaController@edit');
 Route::put('tamu/simpan_update/{id}', 'cobaController@update');
 Route::get('tamu/delete/{id}', 'cobaController@delete');
+
+//kirim email
+Route::post('tamu/email', 'cobaController@send_email');

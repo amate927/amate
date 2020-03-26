@@ -18,6 +18,7 @@ class CreateTamuTable extends Migration
             $table->string('nama')->nullable();
             $table->string('keperluan')->nullable();
             $table->string('no_hp')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

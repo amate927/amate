@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Tamu;
+use App\Mail\tamuPosted;
 
 class cobaController extends Controller
 {
@@ -29,7 +31,8 @@ class cobaController extends Controller
     	Tamu::create([
     		'nama' 		=> $request->nama,
     		'keperluan' => $request->keperluan,
-    		'no_hp' 	=> $request->no_hp
+    		'no_hp' 	=> $request->no_hp,
+            'email'     => $request->email
     	]);
 
     	return redirect('tamu/view');
@@ -47,10 +50,23 @@ class cobaController extends Controller
     	Tamu::find($id)->update([
     		'nama' 		=> $request->nama,
     		'keperluan' => $request->keperluan,
-    		'no_hp' 	=> $request->no_hp
+    		'no_hp' 	=> $request->no_hp,
+            'email'     => $request->email
     	]);
 
     	return redirect('tamu/view');
+    }
+
+    //mengirim email
+    public function send_email(Request $request) {
+        $id   = $request->id;
+        $data = Tamu::select('email')->where('id', $id)->first();
+
+        $pengirim = $data->email;
+
+        Mail::to($pengirim)->send(new tamuPosted());
+
+        return redirect('tamu/view');
     }
 
     //hapus data

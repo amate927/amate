@@ -35,6 +35,12 @@
 	                                <input class=" form-control" id="no_hp" name="no_hp" type="text" />
 	                            </div>
 	                        </div>
+	                        <div class="form-group ">
+	                            <label for="email" class="control-label col-lg-3">Email</label>
+	                            <div class="col-lg-6">
+	                                <input class=" form-control" id="email" name="email" type="email" placeholder="achmad@gmail.com" />
+	                            </div>
+	                        </div>
 	                        <div class="form-group">
 	                            <div class="col-lg-offset-3 col-lg-6">
 	                               <a href="{{url('tamu/view')}}" class="btn btn-danger">Cancel</a>
