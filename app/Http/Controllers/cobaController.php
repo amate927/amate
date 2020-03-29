@@ -57,7 +57,7 @@ class cobaController extends Controller
     	return redirect('tamu/view');
     }
 
-    //mengirim email
+    //mengirim email menggunakan (mailtrap.io)
     public function send_email(Request $request) {
         $id   = $request->id;
         $data = Tamu::select('email')->where('id', $id)->first();
